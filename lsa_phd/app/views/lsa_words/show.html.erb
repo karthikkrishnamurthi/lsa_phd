@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Word:</b>
+  <%= @lsa_word.word %>
+</p>
+
+<p>
+  <b>Lsa Sentence:</b>
+  <%= @lsa_word.lsa_sentence_id %>
+</p>
+
+<p>
+  <b>Lsa Document:</b>
+  <%= @lsa_word.lsa_document_id %>
+</p>
+
+<%= link_to 'Edit', edit_lsa_word_path(@lsa_word) %> |
+<%= link_to 'Back', lsa_words_path %>

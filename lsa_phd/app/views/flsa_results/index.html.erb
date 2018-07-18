@@ -1,0 +1,41 @@
+<h1>Listing flsa_results</h1>
+
+<table>
+  <tr>
+    <th>Lsa document</th>
+    <th>Document</th>
+    <th>Label</th>
+    <th>Lsa label</th>
+    <th>Flsa label</th>
+    <th>Precision</th>
+    <th>Recall</th>
+    <th>F measure</th>
+    <th>Lsa max similarity</th>
+    <th>Flsa max similarity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @flsa_results.each do |flsa_result| %>
+  <tr>
+    <td><%= flsa_result.lsa_document_id %></td>
+    <td><%= flsa_result.document_id %></td>
+    <td><%= flsa_result.label %></td>
+    <td><%= flsa_result.lsa_label %></td>
+    <td><%= flsa_result.flsa_label %></td>
+    <td><%= flsa_result.precision %></td>
+    <td><%= flsa_result.recall %></td>
+    <td><%= flsa_result.f_measure %></td>
+    <td><%= flsa_result.lsa_max_similarity %></td>
+    <td><%= flsa_result.flsa_max_similarity %></td>
+    <td><%= link_to 'Show', flsa_result %></td>
+    <td><%= link_to 'Edit', edit_flsa_result_path(flsa_result) %></td>
+    <td><%= link_to 'Destroy', flsa_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Flsa result', new_flsa_result_path %>

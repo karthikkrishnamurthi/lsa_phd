@@ -1,0 +1,52 @@
+<h1>Documents <%= @documents.count %></h1>
+<!-- <a href="/documents/seperate_by_space/1">Create Content</a> -->
+<%= link_to 'New Document', new_document_path %>
+<!-- <a href="/documents/create_sentences/1">Create Sentences</a> |  -->
+<!-- <a href="/documents/create_words/1">Create Words</a> | -->
+<!-- <a href="/documents/tf_matrix/1">Create Matrix</a><br/><br/> -->
+<!-- <a href="/lsa_documents/create_summary_train_set/1?round=CSLSA_20&d1=1&d2=2">CSLSA_20</a> |
+<a href="/lsa_documents/create_summary_train_set/1?round=CSLSA_60&d1=1&d2=2">CSLSA_60</a> |
+<a href="/lsa_documents/create_summary_train_set/1?round=CSLSA_50&d1=1&d2=2">CSLSA_50</a> |
+<a href="/lsa_documents/create_summary_train_set/1?round=CSLSA_40&d1=1&d2=2">CSLSA_40</a> |
+<a href="/lsa_documents/create_summary_train_set/1?round=CSLSA_30&d1=1&d2=2">CSLSA_30</a> | -->
+<!-- <a href="/lsa_documents/create_dataset/1?round=CSLSA&d1=1&d2=2">CSLSA</a> | -->
+<!-- <a href="/lsa_documents/create_summary_train_set/1?round=DSLSA_20&d1=1&d2=2">DSLSA_20</a> |
+<a href="/lsa_documents/create_summary_train_set/1?round=DSLSA_30&d1=1&d2=2">DSLSA_30</a> |
+<a href="/lsa_documents/create_summary_train_set/1?round=DSLSA_40&d1=1&d2=2">DSLSA_40</a> |
+<a href="/lsa_documents/create_summary_train_set/1?round=DSLSA_50&d1=1&d2=2">DSLSA_50</a> |
+<a href="/lsa_documents/create_summary_train_set/1?round=DSLSA_60&d1=1&d2=2">DSLSA_60</a> | -->
+<br/><br/>
+<!-- <a href="/lsa_documents">View Rounds</a> -->
+<br/><br/>
+<table>
+<% @documents.each do |document| %>
+<tr>
+  <tr><td>TITLE: <%= document.title %></td></tr>
+  <tr><td>CONTENT: <%= document.content %></td></tr>
+  <tr><td>DATE: <%= document.date %></td></tr>
+  <tr><td>LABEL: <%= document.label %></td></tr>
+  <tr><td>DOCNO: <%= document.docno %></td></tr>
+  <tr><td>ID: <%= document.id %></td></tr>
+  <tr><td>
+       <!-- <a href="/documents/matrix/<%= document.id %>">TF Matrix</a> | -->
+<!--  | <a href="/documents/augmented_tf_matrix/<%= document.id %>">Augmented TF</a>
+      | <a href="/documents/idf_matrix/<%= document.id %>">IDF</a>
+      | <a href="/documents/tfidf_matrix/<%= document.id %>">TFIDF</a>
+      | <a href="/documents/boolean_matrix/<%= document.id %>">Boolean</a>
+      | <a href="/documents/log_matrix/<%= document.id %>">Log</a>       -->
+      <a href="/documents/sentences/<%= document.id %>">Sentences</a>
+      | <a href="/documents/words/<%= document.id %>">Words</a>
+      <!-- | <a href="/documents/gong_liu_summary/<%= document.id %>">Extract</a> -->
+<!--       | <a href="/documents/steinberger_summary/<%= document.id %>">Steinberger</a>
+      | <a href="/documents/ozsoy_cross/<%= document.id %>">Ozsoy_Cross</a>
+      | <a href="/documents/ozsoy_topic/<%= document.id %>">Ozsoy_Topic</a> -->
+      <!-- | <a href="/documents/lsi/<%= document.id %>">LSI</a> -->
+      | <a href="/documents/edit/<%= document.id %>" target="_blank">Edit</a> 
+      | <%= link_to 'Delete', document, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+  </tr>
+  <tr><td><br/></td></tr>
+</tr>
+<% end %>
+</table>
+

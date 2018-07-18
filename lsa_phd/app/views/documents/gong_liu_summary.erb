@@ -1,0 +1,34 @@
+<h2>V transpose matrix</h2>
+<table border="1">
+	<tr><td></td>
+	<% for j in 1..@d.sentences.count %>
+		<td>Sen <%= j %></td>
+	<% end %>
+	</tr>
+	<% for i in 0..@dimensions - 1 %>
+	<tr>
+		<td>Con <%= i + 1 %></td>
+		<% for j in 0..@d.sentences.count - 1 %>
+			<% if j == @row_greatest[i] %>
+				<td style="background-color: yellow;"><%= @vt[i,j].round(3) %></td>
+			<% else %>
+				<td><%= @vt[i,j].round(3) %></td>
+			<% end %>
+		<% end %>
+	</tr>
+	<% end %>
+</table>
+<br/>
+<h2>Extractive summary</h2>
+Title: <%= @d.title %><br/>
+<% for k in 0..@sentences.count - 1 %>
+	<%= k + 1 %> 
+	<% if @row_greatest.include? k %>
+		<label style="background-color: yellow;"><%= @sentences[k] %>. </label>
+	<% else %>
+		<label><%= @sentences[k] %>. </label>
+	<% end %>
+	<br/>
+<% end %>
+<br/>
+<a href="/documents">Back</a>

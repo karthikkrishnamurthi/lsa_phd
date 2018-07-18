@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Lsa document:</b>
+  <%= @lsa_test_word.lsa_document_id %>
+</p>
+
+<p>
+  <b>Lsa test sentence:</b>
+  <%= @lsa_test_word.lsa_test_sentence_id %>
+</p>
+
+<p>
+  <b>Word:</b>
+  <%= @lsa_test_word.word %>
+</p>
+
+
+<%= link_to 'Edit', edit_lsa_test_word_path(@lsa_test_word) %> |
+<%= link_to 'Back', lsa_test_words_path %>

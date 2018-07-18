@@ -1,0 +1,2 @@
+module LsaSentencesHelper
+end

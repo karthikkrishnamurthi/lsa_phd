@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Word:</b>
+  <%= @lsa_training_unique_word.word %>
+</p>
+
+<p>
+  <b>Category frequency:</b>
+  <%= @lsa_training_unique_word.category_frequency %>
+</p>
+
+<p>
+  <b>Icf:</b>
+  <%= @lsa_training_unique_word.icf %>
+</p>
+
+<p>
+  <b>Lsa document:</b>
+  <%= @lsa_training_unique_word.lsa_document_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_lsa_training_unique_word_path(@lsa_training_unique_word) %> |
+<%= link_to 'Back', lsa_training_unique_words_path %>

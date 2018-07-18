@@ -1,0 +1,54 @@
+<h1>Comparative Results</h1>
+Training: 45 (15 from each category - science, business, sports)<br/>
+Testing: 15 (5 from each category)<br/>
+<br/>
+<a href="/lsa_documents">Back</a><br/><br/>
+<table border="1">
+  <tr>
+    <th>Sl</th>
+    <th>Dimension</th>
+    <th>Actual</th>
+    <th>LSA</th>
+    <th>FLSA</th>
+    <th>DLSA</th>
+    <th>TLSA</th>
+    <th>SLSA</th>
+    <th>CLSA</th>
+<!--     <th>Precision</th>
+    <th>Recall</th>
+    <th>F_measure</th> -->
+<!--     <th>Lsa_max_similarity</th>
+    <th>Flsa_max_similarity</th> -->
+<!--     <th>Difference</th> -->
+    <th>Accuracy (%)</th>
+    <th>FLSA Acc (%)</th>
+    <th>DLSA Acc (%)</th>
+    <th>TLSA Acc (%)</th>
+    <th>SLSA Acc (%)</th>
+    <th>CLSA Acc (%)</th>
+  </tr>
+<% i = 0 %>
+<% @lsa_flsa.each do |lsa_flsa| %>
+  <tr>
+    <td><%= i + 1 %></td>
+    <td><%= lsa_flsa.dimension %></td>
+    <td><%= lsa_flsa.label %></td>
+    <td><%= lsa_flsa.lsa_label %></td>
+    <td><%= lsa_flsa.flsa_label %></td>
+    <td><%= @dlsa[i].lsa_label %></td>
+    <td><%= @tlsa[i].lsa_label %></td>
+    <td><%= @slsa[i].lsa_label %></td>
+    <td><%= @clsa[i].lsa_label %></td>
+    <td><%= lsa_flsa.accuracy %></td>
+    <td><%= lsa_flsa.flsa_accuracy %></td>
+    <td><%= @dlsa[i].accuracy %></td>
+    <td><%= @tlsa[i].accuracy %></td>
+    <td><%= @slsa[i].accuracy %></td>
+    <td><%= @clsa[i].accuracy %></td>
+  </tr>
+  <% i = i + 1 %>
+<% end %>
+</table>
+<br/>
+<a href="/lsa_documents">Back</a>
+

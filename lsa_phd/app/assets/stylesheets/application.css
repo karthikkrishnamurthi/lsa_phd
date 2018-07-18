@@ -1,0 +1,29 @@
+body {
+  background-color: #4B7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+a {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+table {
+  border-collapse:collapse;
+}
+
+#container {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 40px;
+}
+
+#notice {
+  padding: 5px 8px;
+  margin: 10px 0;
+  color: green;
+}

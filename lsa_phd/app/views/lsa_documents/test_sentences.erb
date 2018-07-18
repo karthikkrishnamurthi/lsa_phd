@@ -1,0 +1,22 @@
+<h1>Testing Documents <%= @d.lsa_test_sentences.count %></h1>
+<a href="/lsa_documents">Back</a><br/><br/>
+<table>
+  <tr>
+    <th>Doc_Id</th>
+    <th>Document</th>
+    <th>Label</th>
+    <th></th>
+  </tr>
+<% i = 1 %>
+<% @d.lsa_test_sentences.each do |sentence| %>
+  <tr>
+    <td><%= sentence.document_id %></td>
+    <td><%= sentence.sentence %></td>
+    <td><%= sentence.label %></td>
+<!--     <td><a href="/lsa_test_sentences/edit/<%= sentence.id %>">Edit</a></td> -->
+    <!-- <td><%#= link_to 'Delete', sentence, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+  </tr>
+  <% i = i + 1 %>
+<% end %>
+</table>
+<br />

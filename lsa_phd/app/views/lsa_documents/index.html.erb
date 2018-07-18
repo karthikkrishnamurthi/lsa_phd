@@ -1,0 +1,50 @@
+<h1>Listing lsa_documents</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lsa_documents.each do |lsa_document| %>
+
+  <tr>
+    <td><%= lsa_document.title %> |</td>
+    <!-- <td><%= link_to 'Delete', lsa_document, method: :delete, data: { confirm: 'Are you sure?' } %> |</td> -->
+    <!-- <td><a href="/lsa_documents/add_domain_information_to_train_set/<%= lsa_document.id %>">Add Domain Docs</a> |</td> -->
+    <!-- <td><a href="/lsa_documents/add_domain_information_summary_to_train_set/<%= lsa_document.id %>">Add Domain Docs</a> |</td> -->
+    <!-- <td><a href="/lsa_documents/create_summary_test_set/<%= lsa_document.id %>">Create Summary Test Set</a>|</td> -->
+    <td><a href="/lsa_documents/train_sentences/<%= lsa_document.id %>">Train_Set</a>|</td>
+    <td><a href="/lsa_documents/test_sentences/<%= lsa_document.id %>">Test_Set</a>|</td>
+   <!--  <td><a href="/lsa_documents/create_train_wordset/<%= lsa_document.id %>">Train Wordset</a>|</td>
+    <td><a href="/lsa_documents/create_test_wordset/<%= lsa_document.id %>">Test Wordset</a>|</td> -->
+    <!-- <td><a href="/lsa_documents/create_domain_wordset/<%= lsa_document.id %>">Create Domain Wordset</a> |</td> -->
+    <!-- <td><a href="/lsa_documents/inverse_category_frequency/<%= lsa_document.id %>">ICF</a> |</td> -->
+    <!-- <td><a href="/lsa_training_unique_words?lsa_document_id=<%= lsa_document.id %>">Show ICF</a> |</td> -->
+    <!-- <td><a href="/lsa_documents/tficf_matrix_train/<%= lsa_document.id %>">TFICF Matrix Train</a> |</td> -->
+    <!-- <td><a href="/lsa_documents/tficf_matrix_test/<%= lsa_document.id %>">TFICF Matrix Test</a> |</td> -->
+    <!-- <td><a href="/lsa_documents/tf_matrix_train/<%= lsa_document.id %>">TF_Matrix_Train</a>|</td> -->
+    <!-- <td><a href="/lsa_documents/tf_matrix_test/<%= lsa_document.id %>">TF_Matrix_Test</a>|</td> -->
+    <!-- <td><a href="/lsa_documents/cslsa_tf_matrix_train/<%= lsa_document.id %>">CSLSA_Matrix_Train</a>|</td> -->
+    <!-- <td><a href="/lsa_documents/cslsa_tf_matrix_test/<%= lsa_document.id %>">CSLSA_Matrix_Test</a>|</td> -->
+    <td><a href="/lsa_documents/cslsas_results/<%= lsa_document.id %>">LSA</a> |</td>
+    <!-- <td><a href="/lsa_documents/cslsa_results/<%= lsa_document.id %>">CSLSA</a>|</td> -->
+    <!-- <td><a href="/lsa_documents/dslsa_results/<%= lsa_document.id %>">DSLSA</a> |</td> -->
+    <!-- <td><a href="/lsa_documents/cdslsa_results/<%= lsa_document.id %>">CDSLSA</a> |</td> -->
+    <td><a href="/lsa_documents/show_results/<%= lsa_document.id %>">Results</a></td>
+  </tr>
+
+<% end %>
+</table>
+<br /><br />
+<a href="/documents">Back</a>

@@ -1,0 +1,22 @@
+<h2>Term by Sentence matrix: <%= @all_words.count %> x <%= @d.sentences.count %></h2>
+<a href="/documents/lsi/<%= @d.id %>">LSI</a> | <a href="/documents">Back</a>
+<br/><br/>
+<table border="1">
+	<tr><td></td>
+		<% for j in 1..@d.sentences.count %>
+			<td><b><%= j %></b></td>
+		<% end %>
+	</tr>
+	<% i = 0 %>
+	<% @dmatrix.each do |dm| %>
+		<% row = dm.split(",").collect{ |s| s.to_f } %>
+		<tr>
+		    <td><b><%= @all_words[i] %></b></td>
+		    <% row.each do |r| %>
+				<td align="right"><%= r %></td>
+			<% end %>
+		</tr>
+		<% i = i + 1 %>
+	<% end %>
+</table>
+<br/>

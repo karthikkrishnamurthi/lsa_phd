@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sentence: MyString
+  text,: MyString
+  lsa_document_id: MyString
+  integer: MyString
+
+two:
+  sentence: MyString
+  text,: MyString
+  lsa_document_id: MyString
+  integer: MyString

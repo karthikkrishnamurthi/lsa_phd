@@ -1,0 +1,111 @@
+<h2>Sentence to Sentence similarity: <%= @sen_sen.rows.count %> x <%= @sen_sen.columns.count %></h2>
+<table border="1">
+	<tr><td></td>
+		<% for j in 1..(@sen_sen.columns.count) %>
+			<td><b><%= j %></b></td>
+		<% end %>
+	</tr>
+	<% for i in 0..(@sen_sen.rows.count - 1) %>
+  <tr>
+  	<td><b><%= i + 1 %></b></td>
+      <% for j in 0..(@sen_sen.columns.count - 1) %>
+      	<td>
+      		<%= @sen_sen[i,j].round(3) %>
+      	</td>
+      <% end %>
+  </tr>
+  <% end %>
+</table>
+<br/>
+
+<h2>Word to Word similarity: <%= @word_word.rows.count %> x <%= @word_word.columns.count %></h2>
+<table border="1">
+  <tr><td></td>
+    <% for j in 1..(@word_word.columns.count) %>
+      <td><b><%= j %></b></td>
+    <% end %>
+  </tr>
+  <% for i in 0..(@word_word.rows.count - 1) %>
+  <tr>
+    <td><b><%= i + 1 %></b></td>
+      <% for j in 0..(@word_word.columns.count - 1) %>
+        <td>
+          <%= @word_word[i,j].round(3) %>
+        </td>
+      <% end %>
+  </tr>
+  <% end %>
+</table>
+<br/>
+
+<h2>LSI matrix Ak: <%= @ak.rows.count %> x <%= @ak.columns.count %></h2>
+<table border="1">
+  <tr><td></td>
+    <% for j in 1..(@ak.columns.count) %>
+      <td>Sen <%= j %></td>
+    <% end %>
+  </tr>
+  <% for i in 0..(@ak.rows.count - 1) %>
+  <tr>
+    <td><%= @words[i] %></td>
+      <% for j in 0..(@ak.columns.count - 1) %>
+        <td><%= @ak[i,j].round(3) %></td>
+      <% end %>     
+    </tr>
+  <% end %>
+</table>
+<br/>
+
+<h2>Term by Concept matrix Uk: <%= @uk.rows.count %> x <%= @uk.columns.count %></h2>
+<table border="1">
+  <tr><td></td>
+    <% for j in 1..(@uk.columns.count) %>
+      <td>Con <%= j %></td>
+    <% end %>
+  </tr>
+  <% for i in 0..(@uk.rows.count - 1) %>
+  <tr>
+    <td><%= @words[i] %></td>
+      <% for j in 0..(@uk.columns.count - 1) %>
+        <td><%= @uk[i,j].round(3) %></td>
+      <% end %>     
+    </tr>
+  <% end %>
+</table>
+<br/>
+
+<h2>Concept by Concept matrix Sk: <%= @sk.rows.count %> x <%= @sk.columns.count %></h2>
+<table border="1">
+  <tr><td></td>
+    <% for j in 1..(@sk.columns.count) %>
+      <td>Con <%= j %></td>
+    <% end %>
+  </tr>
+  <% for i in 0..(@sk.rows.count - 1) %>
+  <tr>
+    <td>Con <%= i + 1 %></td>
+      <% for j in 0..(@sk.columns.count - 1) %>
+        <td><%= @sk[i,j].round(3) %></td>
+      <% end %>     
+    </tr>
+  <% end %>
+</table>
+<br/>
+
+<h2>Concept by Sentence matrix Vk transpose: <%= @vkt.rows.count %> x <%= @vkt.columns.count %></h2>
+<table border="1">
+  <tr><td></td>
+    <% for j in 1..(@vkt.columns.count) %>
+      <td>Sen <%= j %></td>
+    <% end %>
+  </tr>
+  <% for i in 0..(@vkt.rows.count - 1) %>
+  <tr>
+    <td>Con <%= i + 1 %></td>
+      <% for j in 0..(@vkt.columns.count - 1) %>
+        <td><%= @vkt[i,j].round(3) %></td>
+      <% end %>     
+    </tr>
+  <% end %>
+</table>
+<br/>

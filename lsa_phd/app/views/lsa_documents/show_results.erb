@@ -1,0 +1,26 @@
+<h1>CSLSA Results</h1>
+<a href="/lsa_documents">Back</a><br/><br/>
+<table border="1">
+  <tr>
+<!--     <th>Dimension</th> -->
+    <!-- <th>LSA Accuracy (%)</th> -->
+    <th>Accuracy (%)</th>
+  </tr>
+<% i = 1 %>
+<% total = 0 %>
+<% count = @flsa_results.count %>
+<% @flsa_results.each do |flsa_result| %>
+  <tr>
+    <!-- <td><%= flsa_result.dimension %></td> -->
+    <!-- <td><%= flsa_result.accuracy %></td> -->
+    <td><%= flsa_result.flsa_accuracy %></td>
+    <% total = total + flsa_result.flsa_accuracy %>
+  </tr>
+  <% i = i + 1 %>
+<% end %>
+<% average = (total/count).round(2) %>
+<tr><td><b><%= average %></b></td></tr>
+</table>
+<br/>
+<a href="/lsa_documents">Back</a>
+

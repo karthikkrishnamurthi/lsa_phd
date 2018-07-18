@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  word: MyString
+  category_frequency: 1
+  icf: 1.5
+  lsa_document_id: 1
+
+two:
+  word: MyString
+  category_frequency: 1
+  icf: 1.5
+  lsa_document_id: 1

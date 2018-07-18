@@ -1,0 +1,53 @@
+<%= form_for(@lsa_test_sentence) do |f| %>
+  <% if @lsa_test_sentence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lsa_test_sentence.errors.count, "error") %> prohibited this lsa_test_sentence from being saved:</h2>
+
+      <ul>
+      <% @lsa_test_sentence.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lsa_document_id %><br />
+    <%= f.number_field :lsa_document_id %>
+  </div>
+  <div class="field">
+    <%= f.label :document_id %><br />
+    <%= f.number_field :document_id %>
+  </div>
+  <div class="field">
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </div>
+  <div class="field">
+    <%= f.label :lsa_label %><br />
+    <%= f.text_field :lsa_label %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br />
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :recall %><br />
+    <%= f.text_field :recall %>
+  </div>
+  <div class="field">
+    <%= f.label :f_measure %><br />
+    <%= f.text_field :f_measure %>
+  </div>
+  <div class="field">
+    <%= f.label :similarity %><br />
+    <%= f.text_area :similarity %>
+  </div>
+  <div class="field">
+    <%= f.label :sentence %><br />
+    <%= f.text_area :sentence %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

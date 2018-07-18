@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Lsa document:</b>
+  <%= @flsa_result.lsa_document_id %>
+</p>
+
+<p>
+  <b>Document:</b>
+  <%= @flsa_result.document_id %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @flsa_result.label %>
+</p>
+
+<p>
+  <b>Lsa label:</b>
+  <%= @flsa_result.lsa_label %>
+</p>
+
+<p>
+  <b>Flsa label:</b>
+  <%= @flsa_result.flsa_label %>
+</p>
+
+<p>
+  <b>Precision:</b>
+  <%= @flsa_result.precision %>
+</p>
+
+<p>
+  <b>Recall:</b>
+  <%= @flsa_result.recall %>
+</p>
+
+<p>
+  <b>F measure:</b>
+  <%= @flsa_result.f_measure %>
+</p>
+
+<p>
+  <b>Lsa max similarity:</b>
+  <%= @flsa_result.lsa_max_similarity %>
+</p>
+
+<p>
+  <b>Flsa max similarity:</b>
+  <%= @flsa_result.flsa_max_similarity %>
+</p>
+
+
+<%= link_to 'Edit', edit_flsa_result_path(@flsa_result) %> |
+<%= link_to 'Back', flsa_results_path %>

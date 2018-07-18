@@ -1,0 +1,2 @@
+module LsaWordsHelper
+end

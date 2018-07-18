@@ -1,0 +1,31 @@
+<h1>Listing lsa_training_unique_words</h1>
+<a href="/lsa_documents">Back</a>
+<br/><br/>
+<table>
+  <tr>
+    <th>Word</th>
+    <th>Category frequency</th>
+    <th></th>
+    <th>Icf</th>
+    <th></th>
+    <th>Lsa document</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lsa_training_unique_words.each do |lsa_training_unique_word| %>
+  <tr>
+    <td><%= lsa_training_unique_word.word %></td>
+    <td><%= lsa_training_unique_word.category_frequency %></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td><%= lsa_training_unique_word.icf %></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td><%= lsa_training_unique_word.lsa_document_id %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lsa training unique word', new_lsa_training_unique_word_path %>

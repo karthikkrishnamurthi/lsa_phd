@@ -1,0 +1,19 @@
+<h1>Words <%= @s.lsa_words.count %></h1>
+<table>
+  <tr>
+    <th>Word</th>
+    <th>Sentence</th>
+    <th>Document</th>
+    <th></th>
+  </tr>
+<% @s.lsa_words.each do |word| %>
+  <tr>
+    <td><%= word.word %></td>
+    <td><%= word.lsa_sentence_id %></td>
+    <td><%= word.lsa_document_id %></td>
+    <td><a href="/lsa_words/edit/<%= word.id %>">Edit</a></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<a href="/lsa_documents/sentences/<%= @s.lsa_document_id %>">Back</a>

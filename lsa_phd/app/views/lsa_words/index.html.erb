@@ -1,0 +1,27 @@
+<h1>Listing lsa_words</h1>
+
+<table>
+  <tr>
+    <th>Word</th>
+    <th>Lsa Sentence</th>
+    <th>Lsa Document</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lsa_words.each do |lsa_word| %>
+  <tr>
+    <td><%= lsa_word.word %></td>
+    <td><%= lsa_word.lsa_sentence_id %></td>
+    <td><%= lsa_word.lsa_document_id %></td>
+    <td><%= link_to 'Show', lsa_word %></td>
+    <td><%= link_to 'Edit', edit_lsa_word_path(lsa_word) %></td>
+    <td><%= link_to 'Destroy', lsa_word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lsa word', new_lsa_word_path %>

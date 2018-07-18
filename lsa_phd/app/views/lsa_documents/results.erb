@@ -1,0 +1,30 @@
+<h2><%= params[:round] %> results <%= @all_words %> x <%= @doc_count %></h2>
+<a href="/lsa_documents">Back</a><br/><br/>
+<table border="1">
+	<tr>
+		<th>Document</th>
+		<th>Original Label</th>
+		<th>LSA Label</th>
+		<th>FLSA Label</th>
+		<th>LSA Similarity</th>
+		<th>FLSA Similarity</th>
+		<th>Difference</th>
+	</tr>
+	<% @results.each do |r| %>
+		<tr>
+		    <td><%= r.document_id %></td>
+		    <td><%= r.label %></td>
+		    <td><%= r.lsa_label %></td>
+		    <td><%= r.flsa_label %></td>
+		    <% if r.lsa_max_similarity > r.flsa_max_similarity %>
+		    	<td><b><font color="green"><%= r.lsa_max_similarity %></font></b></td>		    
+		    	<td><%= r.flsa_max_similarity %></td>
+		    	<td><%= (r.lsa_max_similarity - r.flsa_max_similarity).round(4) %></td>
+		    <% else %>
+		    	<td><%= r.lsa_max_similarity %></td>
+		    	<td><b><font color="green"><%= r.flsa_max_similarity %></font></b></td>
+		    	<td><%= (r.flsa_max_similarity - r.lsa_max_similarity).round(4) %></td>
+		    <% end %>		    
+		</tr>
+	<% end %>
+</table>	

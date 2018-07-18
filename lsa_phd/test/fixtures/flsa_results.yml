@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  lsa_document_id: 1
+  document_id: 1
+  label: MyString
+  lsa_label: MyString
+  flsa_label: MyString
+  precision: 1.5
+  recall: 1.5
+  f_measure: 1.5
+  lsa_max_similarity: 1.5
+  flsa_max_similarity: 1.5
+
+two:
+  lsa_document_id: 1
+  document_id: 1
+  label: MyString
+  lsa_label: MyString
+  flsa_label: MyString
+  precision: 1.5
+  recall: 1.5
+  f_measure: 1.5
+  lsa_max_similarity: 1.5
+  flsa_max_similarity: 1.5

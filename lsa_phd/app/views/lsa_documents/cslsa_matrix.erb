@@ -1,0 +1,18 @@
+<h2><%= @d.title %> Training Set Term by Document matrix: <%= @all_words.count %> x <%= @d.lsa_sentences.count %></h2>
+<a href="/lsa_documents">Back</a>
+<br/><br/>
+<table border="1">
+	<tr><td></td>
+		<% @d.lsa_sentences.each do |ls| %>
+			<td><b><%= ls.label %></b></td>
+		<% end %>
+	</tr>
+	<% @all_words.each do |w| %>
+		<td><b><% w.word %></b></td>
+		<tr>
+			<td align="right"></td>
+		</tr>
+	<% end %>
+</table>
+<br/>
+

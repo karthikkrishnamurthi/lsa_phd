@@ -1,0 +1,26 @@
+<h2>V transpose matrix</h2>
+<table border="1">
+	<tr><td></td>
+	<% for j in 1..@d.sentences.count %>
+		<td>Sen <%= j %></td>
+	<% end %>
+	</tr>
+	<% for i in 0..9 %>
+	<tr>
+		<td>Con <%= i + 1 %></td>
+		<% for j in 0..@d.sentences.count - 1 %>
+			<td><%= @vt[i,j].round(3) %></td>
+		<% end %>
+	</tr>
+	<% end %>
+</table>
+<br/>
+<h2>Extractive summary</h2>
+Title: <%= @d.title %><br/>
+<% for k in 0..@sentences.count - 1 %>
+	<%= k + 1 %> 
+		<label><%= @sentences[k] %>. </label>
+	<br/>
+<% end %>
+<br/>
+<a href="/documents">Back</a>

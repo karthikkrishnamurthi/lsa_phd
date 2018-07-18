@@ -1,0 +1,36 @@
+<h2>V matrix</h2>
+<table border="1">
+	<tr><td></td>
+	<% for j in 1..@d.sentences.count %>
+		<td>Con <%= j %></td>
+	<% end %>
+		<td>Length</td>
+	</tr>
+	<% for i in 0..@sentences.count - 1 %>
+	<tr>
+		<td>Sen <%= i + 1 %></td>
+		<% for j in 0..@d.sentences.count - 1 %>
+			<td><%= @v[i,j].round(3) %></td>
+		<% end %>
+		<% if i == @position %>
+			<td style="background-color: yellow;"><%= @length[i] %></td>
+		<% else %>
+			<td><%= @length[i] %></td>
+		<% end %>
+	</tr>
+	<% end %>
+</table>
+<br/>
+<h2>Extractive summary</h2>
+Title: <%= @d.title %><br/>
+<% for k in 0..@sentences.count - 1 %>
+	<%= k + 1 %> 
+	<% if k == @position %>
+		<label style="background-color: yellow;"><%= @sentences[k] %>. </label>
+	<% else %>
+		<label><%= @sentences[k] %>. </label>
+    <% end %>
+	<br/>
+<% end %>
+<br/>
+<a href="/documents">Back</a>

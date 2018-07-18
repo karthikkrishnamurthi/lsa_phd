@@ -1,0 +1,57 @@
+<%= form_for(@flsa_result) do |f| %>
+  <% if @flsa_result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flsa_result.errors.count, "error") %> prohibited this flsa_result from being saved:</h2>
+
+      <ul>
+      <% @flsa_result.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lsa_document_id %><br />
+    <%= f.number_field :lsa_document_id %>
+  </div>
+  <div class="field">
+    <%= f.label :document_id %><br />
+    <%= f.number_field :document_id %>
+  </div>
+  <div class="field">
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </div>
+  <div class="field">
+    <%= f.label :lsa_label %><br />
+    <%= f.text_field :lsa_label %>
+  </div>
+  <div class="field">
+    <%= f.label :flsa_label %><br />
+    <%= f.text_field :flsa_label %>
+  </div>
+  <div class="field">
+    <%= f.label :precision %><br />
+    <%= f.text_field :precision %>
+  </div>
+  <div class="field">
+    <%= f.label :recall %><br />
+    <%= f.text_field :recall %>
+  </div>
+  <div class="field">
+    <%= f.label :f_measure %><br />
+    <%= f.text_field :f_measure %>
+  </div>
+  <div class="field">
+    <%= f.label :lsa_max_similarity %><br />
+    <%= f.text_field :lsa_max_similarity %>
+  </div>
+  <div class="field">
+    <%= f.label :flsa_max_similarity %><br />
+    <%= f.text_field :flsa_max_similarity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

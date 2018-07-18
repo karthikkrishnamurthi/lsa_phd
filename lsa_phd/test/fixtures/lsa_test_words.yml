@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  lsa_document_id: 1
+  lsa_test_sentence_id: 1
+  word: MyString
+
+two:
+  lsa_document_id: 1
+  lsa_test_sentence_id: 1
+  word: MyString

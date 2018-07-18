@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @lsa_document.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @lsa_document.content %>
+</p>
+
+<%= link_to 'Edit', edit_lsa_document_path(@lsa_document) %> |
+<%= link_to 'Back', lsa_documents_path %>

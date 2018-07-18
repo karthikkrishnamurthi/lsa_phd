@@ -1,0 +1,33 @@
+<%= form_for(@lsa_training_unique_word) do |f| %>
+  <% if @lsa_training_unique_word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lsa_training_unique_word.errors.count, "error") %> prohibited this lsa_training_unique_word from being saved:</h2>
+
+      <ul>
+      <% @lsa_training_unique_word.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :word %><br />
+    <%= f.text_field :word %>
+  </div>
+  <div class="field">
+    <%= f.label :category_frequency %><br />
+    <%= f.number_field :category_frequency %>
+  </div>
+  <div class="field">
+    <%= f.label :icf %><br />
+    <%= f.text_field :icf %>
+  </div>
+  <div class="field">
+    <%= f.label :lsa_document_id %><br />
+    <%= f.number_field :lsa_document_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

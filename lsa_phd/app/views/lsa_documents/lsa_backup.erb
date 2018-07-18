@@ -1,0 +1,72 @@
+<h2><%= @d.title %> LSA matrix: <%= @ak.rows.count %> x <%= @ak.columns.count %></h2>
+<a href="/lsa_documents">Back</a><br/><br/>
+<table border="1">
+  <tr><td></td>
+    <% @d.lsa_sentences.each do |ls| %>
+      <td><b>Doc <%= ls.document_id %></b></td>
+    <% end %>
+  </tr>
+  <% for i in 0..(@ak.rows.count - 1) %>
+  <tr>
+    <td><b><%= @words[i] %></b></td>
+      <% for j in 0..(@ak.columns.count - 1) %>
+        <td><%= @ak[i,j].round(3) %></td>
+      <% end %>     
+    </tr>
+  <% end %>
+</table>
+<br/>
+
+<h2>Term by Concept matrix Uk: <%= @uk.rows.count %> x <%= @uk.columns.count %></h2>
+<table border="1">
+  <tr><td></td>
+    <% for j in 1..(@uk.columns.count) %>
+      <td><b>Con <%= j %></b></td>
+    <% end %>
+  </tr>
+  <% for i in 0..(@uk.rows.count - 1) %>
+  <tr>
+    <td><b><%= @words[i] %></b></td>
+      <% for j in 0..(@uk.columns.count - 1) %>
+        <td><%= @uk[i,j].round(3) %></td>
+      <% end %>     
+    </tr>
+  <% end %>
+</table>
+<br/>
+
+<h2>Concept by Concept matrix Sk: <%= @sk.rows.count %> x <%= @sk.columns.count %></h2>
+<table border="1">
+  <tr><td></td>
+    <% for j in 1..(@sk.columns.count) %>
+      <td><b>Con <%= j %></b></td>
+    <% end %>
+  </tr>
+  <% for i in 0..(@sk.rows.count - 1) %>
+  <tr>
+    <td><b>Con <%= i + 1 %></b></td>
+      <% for j in 0..(@sk.columns.count - 1) %>
+        <td><%= @sk[i,j].round(3) %></td>
+      <% end %>     
+    </tr>
+  <% end %>
+</table>
+<br/>
+
+<h2>Concept by Document matrix Vk transpose: <%= @vkt.rows.count %> x <%= @vkt.columns.count %></h2>
+<table border="1">
+  <tr><td></td>
+    <% @d.lsa_sentences.each do |ls| %>
+      <td><b>Doc <%= ls.document_id %></b></td>
+    <% end %>
+  </tr>
+  <% for i in 0..(@vkt.rows.count - 1) %>
+  <tr>
+    <td><b>Con <%= i + 1 %></b></td>
+      <% for j in 0..(@vkt.columns.count - 1) %>
+        <td><%= @vkt[i,j].round(3) %></td>
+      <% end %>     
+    </tr>
+  <% end %>
+</table>
+<br/>

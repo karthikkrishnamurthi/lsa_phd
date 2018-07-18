@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Lsa document:</b>
+  <%= @lsa_test_sentence.lsa_document_id %>
+</p>
+
+<p>
+  <b>Document:</b>
+  <%= @lsa_test_sentence.document_id %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @lsa_test_sentence.label %>
+</p>
+
+<p>
+  <b>Lsa label:</b>
+  <%= @lsa_test_sentence.lsa_label %>
+</p>
+
+<p>
+  <b>Precision:</b>
+  <%= @lsa_test_sentence.precision %>
+</p>
+
+<p>
+  <b>Recall:</b>
+  <%= @lsa_test_sentence.recall %>
+</p>
+
+<p>
+  <b>F measure:</b>
+  <%= @lsa_test_sentence.f_measure %>
+</p>
+
+<p>
+  <b>Similarity:</b>
+  <%= @lsa_test_sentence.similarity %>
+</p>
+
+<p>
+  <b>Sentence:</b>
+  <%= @lsa_test_sentence.sentence %>
+</p>
+
+
+<%= link_to 'Edit', edit_lsa_test_sentence_path(@lsa_test_sentence) %> |
+<%= link_to 'Back', lsa_test_sentences_path %>
